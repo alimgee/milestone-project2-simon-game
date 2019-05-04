@@ -1,10 +1,23 @@
 body {
   font-family: 'Righteous', cursive;
 }
-
+/*Nav section*/
 .navbar-brand  {
     font-family: 'Righteous', cursive;
 }
 .nav-item{
     font-family: 'Righteous', cursive;
+}
+
+
+/* Footer section*/
+
+.bottom-page {
+  background-color: #343a40;
+  color: #c4c7ce;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: auto;
+  text-align: center;
+  font-family: 'Righteous', cursive;
 }
