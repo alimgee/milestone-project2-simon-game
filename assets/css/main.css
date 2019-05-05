@@ -20,6 +20,7 @@ body {
     background-image: url(/assets/images/bg-small.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: #45a29e;
 }
 
 /* board section*/
