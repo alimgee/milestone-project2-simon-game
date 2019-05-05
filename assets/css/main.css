@@ -1,23 +1,64 @@
 body {
-  font-family: 'Righteous', cursive;
-}
-/*Nav section*/
-.navbar-brand  {
-    font-family: 'Righteous', cursive;
-}
-.nav-item{
     font-family: 'Righteous', cursive;
 }
 
+/*Nav section*/
+
+.navbar-brand {
+    font-family: 'Righteous', cursive;
+}
+
+.nav-item {
+    font-family: 'Righteous', cursive;
+}
+
+/* main content*/
+
+/* page bakground*/
+
+.wrapper {
+    background-image: url("/assets/images/bg-small.png");
+    background-size: cover;
+}
+
+/* board section*/
+
+/*back of board*/
+
+.back {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    background-color: black;
+    margin: auto;
+    position: relative;
+}
 
 /* Footer section*/
 
 .bottom-page {
-  background-color: #343a40;
-  color: #c4c7ce;
-  font-size: 1rem;
-  padding: 1rem;
-  margin: auto;
-  text-align: center;
-  font-family: 'Righteous', cursive;
+    background-color: #343a40;
+    color: #c4c7ce;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+
+
+/* media queries*/
+
+@media only screen and (min-width: 768px) {
+    /* resizing back board for different screens*/
+    .back {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    /* setting different background images for larger screens*/
+    .wrapper {
+        background-image: url("/assets/images/bg.png");
+    }
+
 }
