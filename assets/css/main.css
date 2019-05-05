@@ -17,8 +17,9 @@ body {
 /* page bakground*/
 
 .wrapper {
-    background-image: url("/assets/images/bg-small.png");
+    background-image: url(/assets/images/bg-small.png);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* board section*/
@@ -32,6 +33,67 @@ body {
     background-color: black;
     margin: auto;
     position: relative;
+}
+/* board oloured pads*/
+.pad1 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-top: solid 15px black;
+  border-left: solid 15px black;
+  border-bottom: solid 7.5px black;
+  border-right: solid 7.5px black;
+  background-color: darkred;
+  border-radius: 100% 0 0 0;
+
+}
+
+.pad2 {
+  top: 0;
+  left: 50%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-top: solid 15px black;
+  border-bottom: solid 7.5px black;
+  border-right: solid 15px black;
+  border-left: solid 7.5px black;
+  box-sizing: border-box;
+  background-color: darkgreen;
+  border-radius: 0 100% 0 0;
+
+}
+
+.pad4 {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-top: solid 7.5px black;
+  border-bottom: solid 15px black;
+  border-right: solid 15px black;
+  border-left: solid 7.5px black;
+  background-color: goldenrod;
+  border-radius: 0 0 100% 0;
+
+}
+
+.pad3 {
+  top: 50%;
+  left: 0%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-top: solid 7.5px black;
+  border-bottom: solid 15px black;
+  border-right: solid 7.5px black;
+  border-left: solid 15px black;
+  background-color: darkblue;
+  border-radius: 0 0 0 100%;
+
 }
 
 /* Footer section*/
@@ -58,7 +120,7 @@ body {
 
     /* setting different background images for larger screens*/
     .wrapper {
-        background-image: url("/assets/images/bg.png");
+        background-image: url(/assets/images/bg.png);
     }
 
 }
