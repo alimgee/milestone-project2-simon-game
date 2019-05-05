@@ -20,7 +20,8 @@ body {
     background-image: url(/assets/images/bg-small.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #45a29e;/* adding to accommodate a slow load of bg image on larger screens */
+    background-color: #45a29e;
+    /* adding to accommodate a slow load of bg image on larger screens */
 }
 
 /* board section*/
@@ -35,79 +36,119 @@ body {
     margin: auto;
     position: relative;
 }
+
 /* board oloured pads*/
+
 .pad1 {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-top: solid .9rem black;
-  border-left: solid .9rem black;
-  border-bottom: solid .45rem black;
-  border-right: solid .45rem black;
-  background-color: darkred;
-  border-radius: 100% 0 0 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: solid .9rem black;
+    border-left: solid .9rem black;
+    border-bottom: solid .45rem black;
+    border-right: solid .45rem black;
+    background-color: darkred;
+    border-radius: 100% 0 0 0;
 
 }
 
 .pad2 {
-  top: 0;
-  left: 50%;
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-top: solid .9rem black;
-  border-bottom: solid .45rem black;
-  border-right: solid .9rem black;
-  border-left: solid .45rem black;
-  box-sizing: border-box;
-  background-color: darkgreen;
-  border-radius: 0 100% 0 0;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: solid .9rem black;
+    border-bottom: solid .45rem black;
+    border-right: solid .9rem black;
+    border-left: solid .45rem black;
+    box-sizing: border-box;
+    background-color: darkgreen;
+    border-radius: 0 100% 0 0;
 
 }
 
 .pad4 {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-top: solid .45rem black;
-  border-bottom: solid .9rem black;
-  border-right: solid .9rem black;
-  border-left: solid .45rem black;
-  background-color: goldenrod;
-  border-radius: 0 0 100% 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: solid .45rem black;
+    border-bottom: solid .9rem black;
+    border-right: solid .9rem black;
+    border-left: solid .45rem black;
+    background-color: goldenrod;
+    border-radius: 0 0 100% 0;
 
 }
 
 .pad3 {
-  top: 50%;
-  left: 0%;
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  border-top: solid .45rem black;
-  border-bottom: solid .9rem black;
-  border-right: solid .45rem black;
-  border-left: solid .9rem black;
-  background-color: darkblue;
-  border-radius: 0 0 0 100%;
+    top: 50%;
+    left: 0%;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: solid .45rem black;
+    border-bottom: solid .9rem black;
+    border-right: solid .45rem black;
+    border-left: solid .9rem black;
+    background-color: darkblue;
+    border-radius: 0 0 0 100%;
 
 }
 
 /* centre black circle of game board to finish off game pad shapes*/
-.centre {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  width: 40%;
-  height: 40%;
-  z-index: 1;
-  background-color: black;
-  border-radius: 50%;
 
+.centre {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    z-index: 1;
+    background-color: black;
+    border-radius: 50%;
+
+}
+
+/* centre text in centre black pad*/
+
+.centre-text {
+    position: relative;
+    top: 25%;
+    color: silver;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    clear: right;
+    font-family: 'Righteous', cursive;
+}
+
+/* styling  game start 'play' button*/
+
+.start-button {
+    position: relative;
+    top: 25%;
+    left: 25%;
+    color: red;
+    text-align: center;
+    border-radius: 50%;
+    height: 25%;
+    width: 50%;
+    background-color: silver;
+
+}
+
+.start-text {
+    position: relative;
+    top: 7%;
+    font-family: 'Righteous', cursive;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    font-size: 1rem;
 }
 
 /* Footer section*/
@@ -135,6 +176,15 @@ body {
     /* setting different background images for larger screens*/
     .wrapper {
         background-image: url(/assets/images/bg.png);
+    }
+    /* chaning font size of centre element for larger screens*/
+    .centre-text {
+    font-size: 2em;
+    }
+    /*changing font size of play button for larger screen*/
+    .start-text {
+        letter-spacing: .2rem;
+        font-size: 1.5rem;
     }
 
 }
