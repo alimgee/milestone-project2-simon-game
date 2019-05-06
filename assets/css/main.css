@@ -155,14 +155,41 @@ body {
 /* section beneath board for difficulty level settings and display screen*/
 
 /* main section that holds display and difficulty levels*/
+
 .display-section {
-  margin: auto;
-  width: 80%;
-  border: 3px;
-  padding: 10px;
-  background-color: #c4c7ce;
-  vertical-align: middle;
-  border-radius: 1rem;
+    margin: auto;
+    width: 80%;
+    border: 3px;
+    padding: 10px;
+    background-color: #c4c7ce;
+    vertical-align: middle;
+    border-radius: 1rem;
+
+}
+
+/*difficulty setting section*/
+
+.difficulty {
+    font-size: .7rem;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'Righteous', cursive;
+}
+
+.difficulty-select1 {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: red;
+}
+
+.difficulty-select2 {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
 
 }
 
@@ -194,17 +221,22 @@ body {
     }
     /* chaning font size of centre element for larger screens*/
     .centre-text {
-    font-size: 2em;
+        font-size: 2em;
     }
     /*changing font size of play button for larger screen*/
     .start-text {
         letter-spacing: .2rem;
         font-size: 1.5rem;
     }
-    
+
     /*changing display section length for larger screen*/
-    .display-section{
+    .display-section {
         width: 40%;
+    }
+
+    /* increasing font size for larger screens*/
+    .difficulty {
+        font-size: 1rem;
     }
 
 }
