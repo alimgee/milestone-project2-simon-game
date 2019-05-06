@@ -243,7 +243,7 @@ body {
 
     /* setting different background images for larger screens*/
     .wrapper {
-        background-image: url(/assets/images/bg.png);
+        background-image: url(../../assets/images/bg.png);
     }
     /* chaning font size of centre element for larger screens*/
     .centre-text {
