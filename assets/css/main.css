@@ -17,7 +17,7 @@ body {
 /* page bakground*/
 
 .wrapper {
-    background-image: url(assets/images/bg-small.png);
+    background-image: url('/assets/images/bg-small.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #45a29e;
