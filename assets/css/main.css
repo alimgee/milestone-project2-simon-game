@@ -19,9 +19,10 @@ body {
 .wrapper {
     background-image: url(/assets/images/bg-small.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    *background-repeat: no-repeat;
     background-color: #45a29e;
-    /* adding to accommodate a slow load of bg image on larger screens */
+    /* adding bg colour to accommodate a slow load of bg image 
+    on larger screens */
 }
 
 /* board section*/
@@ -151,6 +152,20 @@ body {
     font-size: 1rem;
 }
 
+/* section beneath board for difficulty level settings and display screen*/
+
+/* main section that holds display and difficulty levels*/
+.display-section {
+  margin: auto;
+  width: 80%;
+  border: 3px;
+  padding: 10px;
+  background-color: #c4c7ce;
+  vertical-align: middle;
+  border-radius: 1rem;
+
+}
+
 /* Footer section*/
 
 .bottom-page {
@@ -185,6 +200,11 @@ body {
     .start-text {
         letter-spacing: .2rem;
         font-size: 1.5rem;
+    }
+    
+    /*changing display section length for larger screen*/
+    .display-section{
+        width: 40%;
     }
 
 }
