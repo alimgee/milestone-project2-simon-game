@@ -32,6 +32,7 @@ function playGame() {
     //begin computer turn by using set interval to loop throught the level
     computerTurn =true;
     interval=setInterval(gameRound, 1000);
+    console.log(computerSequence.toString());
 }
 
 //function to alternate to look of the play button during active play
@@ -50,7 +51,7 @@ function getRndInteger(min, max) {
 }
 
 function gameRound(){
-    console.log("in game round");
+    console.log("in game round Light pad is " + lightPad);
     if(lightPad == level ){//computer has completed a level once its lighted up same amoun of lights as level
     //stop interval
     clearInterval( interval);
@@ -59,11 +60,13 @@ function gameRound(){
     }else{
         //light up a relevant light using timeout function
         setTimeout(lightColour , 200);//switch light on for 200ms
-        lightPad ++; //tracking amount of lights switched on
+       
         
     }
 }
 
 function lightColour(){
-    console.log("in light color")
+    console.log("in light color - lightPad is " + lightPad +" Array element is " + computerSequence[lightPad]);
+     lightPad ++; //tracking amount of lights switched on
+ 
 }
