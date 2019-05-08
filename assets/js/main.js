@@ -143,19 +143,25 @@ function checkSelection() {
     var match = true;
     if (playerSequence[(playerSequence.length - 1)] !== computerSequence[(playerSequence.length - 1)]) {
         match = false;
-
     }
 
     if (!match) {
         console.log("wrong click");
         playing = false; // ending game and changing play button state
         changeStatePlayButton();
+        computerSequence = []; //empty computer array for new game
+        lightPad = 0;
     }
-    if(match && playerSequence.length== level){
+    if (match && playerSequence.length == level) {
         //repeat game function
         console.log("right click");
+        level++; // move up a level for the next cycle
+        playerSequence = []; //empty players sequence for next round of clicks
+        computerTurn = true; //its computers turn next
+        lightPad = 0; //setting counter back to default
+        interval = setInterval(gameRound, 1000); //running game round again with an extra pad lighting
 
     }
 
- 
+
 }
