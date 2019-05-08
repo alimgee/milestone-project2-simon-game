@@ -1,9 +1,9 @@
 let playButton = $(".start-button");
 let playButtonText = $(".start-text");
-let pad1=$(".pad1");
-let pad2=$(".pad2");
-let pad3=$(".pad3");
-let pad4=$(".pad4");
+let pad1 = $(".pad1");
+let pad2 = $(".pad2");
+let pad3 = $(".pad3");
+let pad4 = $(".pad4");
 let playing = false;
 let computerSequence = [];
 let computerTurn = false;
@@ -67,7 +67,7 @@ function gameRound() {
     else {
         //light up a relevant light using timeout function
         //clear last pad colour bg css back to default
-        computerTurn=true;
+        computerTurn = true;
         setTimeout(lightColour, 200); //switch light on for 200ms
         defaultColour(computerSequence[(lightPad) - 1]); //clear last pad to its default background colour
     }
@@ -89,7 +89,7 @@ function pad(padNumber, colour) { //function takes pad id number and relevant co
 }
 
 function defaultColour(padNumber) { //function takes pad id number and uses pad() function to reset colour
-    
+
     console.log("default colour function called. pad number is " + padNumber)
     if (padNumber == 1) pad(1, "darkred");
     if (padNumber == 2) pad(2, "darkgreen");
@@ -99,19 +99,42 @@ function defaultColour(padNumber) { //function takes pad id number and uses pad(
 
 //listening for user click events
 
-pad1.click(function(){
+pad1.click(function() {
     //only doing something when its not the computers turn and the play button is pressed
-    if(!computerTurn && playing){
-        pad(1, "pink");//change bg colour to pink for 1
-        setTimeout(function(){
-        defaultColour(1);//after 300ms set bg colour back to default
-}, 300); //switch light on for 300ms
-        
+    if (!computerTurn && playing) {
+      padUserClick(1, "pink");// function to carry out actions after click
     }
 });
 
-function lightPlayerColour(){
+pad2.click(function() {
+    //only doing something when its not the computers turn and the play button is pressed
+    if (!computerTurn && playing) {
+      padUserClick(2, "lightgreen");
+    }
+});
+
+pad3.click(function() {
+    //only doing something when its not the computers turn and the play button is pressed
+    if (!computerTurn && playing) {
+      padUserClick(3, "lightblue");
+    }
+});
+
+pad4.click(function() {
+    //only doing something when its not the computers turn and the play button is pressed
+    if (!computerTurn && playing) {
+      padUserClick(4, "yellow");
+    }
+});
+
+function lightPlayerColour() {
     console.log("in player colour")
-    pad1.css("background" , "pink");
+    pad1.css("background", "pink");
 }
 
+function padUserClick(num, colour) {
+    pad(num, colour);
+    setTimeout(function() {
+        defaultColour(num); //after 300ms set bg colour back to default
+    }, 300);
+}
