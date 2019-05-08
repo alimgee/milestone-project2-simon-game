@@ -11,7 +11,7 @@ let computerTurn = false;
 let interval = 0;
 let turn = 0;
 let lightPad = 0;
-let level = 0;
+let level = 1;
 
 
 // checking for clicks on 'play button'
@@ -27,7 +27,7 @@ playButton.click(function() {
 //function to set game in play
 function playGame() {
     playerSequence = [];//array to store pad number of user clicks
-    level = 4; //level will increase with each repetition of the set interval loop
+    //level = 4; //level will increase with each repetition of the set interval loop
 
     // generate computer array sequence - loop 20 times as that is the max for the game
     for (var i = 0; i < 20; i++) {
@@ -134,7 +134,20 @@ function padUserClick(num, colour) {
         defaultColour(num); //after 300ms set bg colour back to default
     }, 300);
     console.log(num)
-    playerSequence.push(num);
+    playerSequence.push(num);// passing user selections into array for later checking
     console.log(playerSequence.toString());
+    checkSelection();
+}
+
+function checkSelection(){
+    console.log("Player sequence number is " + playerSequence[playerSequence.length -1] + " number at comp array " + computerSequence[level -1]);
+    if(playerSequence[playerSequence.length -1] !== computerSequence[level -1]){
+        console.log("in check if - wrong click");
+    }else{
+        console.log("in check else - correct  click");
+        level ++;
+    }
     
 }
+
+
