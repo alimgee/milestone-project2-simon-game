@@ -6,6 +6,7 @@ let pad3 = $(".pad3");
 let pad4 = $(".pad4");
 let playing = false;
 let computerSequence = [];
+let playerSequence = [];
 let computerTurn = false;
 let interval = 0;
 let turn = 0;
@@ -25,7 +26,7 @@ playButton.click(function() {
 
 //function to set game in play
 function playGame() {
-
+    playerSequence = [];//array to store pad number of user clicks
     level = 4; //level will increase with each repetition of the set interval loop
 
     // generate computer array sequence - loop 20 times as that is the max for the game
@@ -61,7 +62,7 @@ function gameRound() {
         clearInterval(interval);
         defaultColour(computerSequence[(lightPad - 1)]); //sets last lighted colour back to default
         computerTurn = false;
-        console.log("stopping interval - level is " + level + " light pad indicator is " + lightPad);
+        
 
     }
     else {
@@ -74,7 +75,7 @@ function gameRound() {
 }
 
 function lightColour() {
-    console.log("in light color - lightPad is " + lightPad + " Array element is " + computerSequence[lightPad]);
+    
     if (computerSequence[lightPad] == 1) pad(1, "pink");
     if (computerSequence[lightPad] == 2) pad(2, "lightgreen");
     if (computerSequence[lightPad] == 3) pad(3, "lightblue");
@@ -84,7 +85,7 @@ function lightColour() {
 }
 
 function pad(padNumber, colour) { //function takes pad id number and relevant colour and change css bg colour
-    console.log("in pad function" + colour + padNumber)
+
     $(".pad" + padNumber).css("background-color", colour);
 }
 
@@ -127,14 +128,13 @@ pad4.click(function() {
     }
 });
 
-function lightPlayerColour() {
-    console.log("in player colour")
-    pad1.css("background", "pink");
-}
-
 function padUserClick(num, colour) {
     pad(num, colour);
     setTimeout(function() {
         defaultColour(num); //after 300ms set bg colour back to default
     }, 300);
+    console.log(num)
+    playerSequence.push(num);
+    console.log(playerSequence.toString());
+    
 }
