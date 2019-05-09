@@ -28,10 +28,10 @@ playButton.click(function() {
 
 //function to set game in play
 function playGame() {
-    playerSequence = []; 
-    computerSequence =[];//array to store pad number of user clicks
-    level=1;
-    lightPad =0;
+    playerSequence = [];
+    computerSequence = []; //array to store pad number of user clicks
+    level = 1;
+    lightPad = 0;
     win = false;
     //level = 4; //level will increase with each repetition of the set interval loop
 
@@ -136,31 +136,32 @@ pad4.click(function() {
     }
 });
 
-function padUserClick(num, colour) {// colour pad to 'ligth' after click
-    pad(num, colour);//changing pad colour
+function padUserClick(num, colour) { // colour pad to 'ligth' after click
+    pad(num, colour); //changing pad colour
     setTimeout(function() {
         defaultColour(num); //after 300ms set bg colour back to default
     }, 300);
     console.log(num)
     playerSequence.push(num); // passing user selections into array for later checking
-    console.log(playerSequence.toString());//testing
-    checkSelection();//checking user guesses
+    console.log(playerSequence.toString()); //testing
+    checkSelection(); //checking user guesses
 }
 
-function checkSelection() {// function to check user clicks and compare to computer array sequence
+function checkSelection() { // function to check user clicks and compare to computer array sequence
     var match = true;
     if (playerSequence[(playerSequence.length - 1)] !== computerSequence[(playerSequence.length - 1)]) {
-        match = false;// if wrong click there is no match
+        match = false; // if wrong click there is no match
     }
     if (playerSequence.length == 3 && match) {
-       //player has made all the right guesses. Guesses to win set to 3 for testing purposes
+        //player has made all the right guesses. Guesses to win set to 3 for testing purposes
         winGame();
     }
 
     if (!match) {
-       //restart game and print loser to display screen if wrong click
+        //restart game and print loser to display screen if wrong click
+        flashLights();
         restartGame();
-         showTextInDisplay("Loser!");
+        showTextInDisplay("Loser!");
     }
     if (match && playerSequence.length == level && !win) {
         //repeat game function if guesses are right but user has not yet won
@@ -169,7 +170,6 @@ function checkSelection() {// function to check user clicks and compare to compu
         computerTurn = true; //its computers turn next
         lightPad = 0; //setting counter back to default for next cycle
         interval = setInterval(gameRound, 1000); //running game round again with an extra pad lighting
-
     }
 
 }
@@ -180,14 +180,38 @@ function showTextInDisplay(text) {
 }
 
 function winGame() {
-    console.log("game won");//testing
+    console.log("game won"); //testing
     win = true;
-    restartGame();//start game over and print winner to display
+    restartGame(); //start game over and print winner to display
     showTextInDisplay("Winner!");
-    
+    flashLights();
+
 }
 
-function restartGame(){
+function restartGame() {
     playing = false; // ending game and changing play button state
     changeStatePlayButton();
 }
+
+function lightAllColours(){
+    pad(1, "pink");
+    pad(2, "lightgreen");
+    pad(3, "lightblue");
+    pad(4, "yellow");
+}
+function defaultAllColours(){
+    pad(1, "darkred");
+    pad(2, "darkgreen");
+    pad(3, "darkblue");
+    pad(4, "goldenrod");
+}
+function flashLights(){
+    lightAllColours();
+    setTimeout(function() {
+        defaultAllColours();
+        //after 300ms set bg colours back to default
+    }, 300);
+   
+}
+
+
