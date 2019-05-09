@@ -32,8 +32,8 @@ body {
 /*back of board*/
 
 .back {
-    width: 19rem;
-    height: 19rem;
+    width: 18rem;
+    height: 18rem;
     border-radius: 50%;
     background-color: black;
     margin: auto;
@@ -162,7 +162,7 @@ body {
     margin: auto;
     width: 85%;
     border: 3px;
-    padding: 10px;
+    padding: .5rem;
     background-color: #c4c7ce;
     vertical-align: middle;
     border-radius: 1rem;
@@ -176,7 +176,7 @@ body {
     display: inline-block;
     font-weight: bold;
     font-family: 'Righteous', cursive;
-    width: 100%;
+    width: 90%;
 }
 
 .difficulty-select1 {
