@@ -14,7 +14,9 @@ let turn = 0;
 let lightPad = 0;
 let level = 1;
 let win = false;
-
+let hard = 5;
+let normal = 3;
+let difficulty = normal;
 
 // checking for clicks on 'play button'
 playButton.click(function() {
@@ -33,6 +35,7 @@ function playGame() {
     level = 1;
     lightPad = 0;
     win = false;
+   
     //level = 4; //level will increase with each repetition of the set interval loop
 
     // generate computer array sequence - loop 20 times as that is the max for the game
@@ -54,6 +57,7 @@ function changeStatePlayButton() {
     else { //do not respond to further clicks till game is over and playing var is set to false
         playButtonText.css("color", "white");
     }
+
 }
 
 //random function generator from w3c schools
@@ -152,7 +156,7 @@ function checkSelection() { // function to check user clicks and compare to comp
     if (playerSequence[(playerSequence.length - 1)] !== computerSequence[(playerSequence.length - 1)]) {
         match = false; // if wrong click there is no match
     }
-    if (playerSequence.length == 3 && match) {
+    if (playerSequence.length == difficulty && match) {
         //player has made all the right guesses. Guesses to win set to 3 for testing purposes
         winGame();
     }
@@ -198,12 +202,15 @@ function lightAllColours(){
     pad(2, "lightgreen");
     pad(3, "lightblue");
     pad(4, "yellow");
+    $(".display-section").css("background-color" , "red");
 }
 function defaultAllColours(){
     pad(1, "darkred");
     pad(2, "darkgreen");
     pad(3, "darkblue");
     pad(4, "goldenrod");
+    $(".display-section").css("background-color" , "#c4c7ce");
+    
 }
 function flashLights(){
     lightAllColours();
@@ -214,4 +221,15 @@ function flashLights(){
    
 }
 
+$(".difficulty-select1").click(function() {
+    difficulty = normal;
+    $(".difficulty-select1").css("background-color" , "red");
+    $(".difficulty-select2").css("background-color" , "grey");
+});
+$(".difficulty-select2").click(function() {
+    difficulty = hard;
+    console.log("difficult")
+    $(".difficulty-select1").css("background-color", "grey");
+    $(".difficulty-select2").css("background-color" , "red");
+});
 
