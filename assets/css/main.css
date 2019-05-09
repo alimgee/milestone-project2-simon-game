@@ -226,7 +226,22 @@ body {
     font-family: 'Righteous', cursive;
 }
 
-
+/* modals styling*/
+/*changing bg colour of modal*/
+.modal-content {
+    background-color: #7299d9;
+    color: #fafafa;
+    font-size: 1rem;
+    
+}
+.modal-header {
+    
+    border-bottom: dashed .1rem;
+}
+/* making close button on modal larger*/
+.close {
+    font-size: 3rem;
+}
 /* media queries*/
 @media only screen and (min-width: 568px) {
         /*changing display section length for larger screen*/
