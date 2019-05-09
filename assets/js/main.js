@@ -4,6 +4,7 @@ let pad1 = $(".pad1");
 let pad2 = $(".pad2");
 let pad3 = $(".pad3");
 let pad4 = $(".pad4");
+let displayText = $(".display-text");
 let playing = false;
 let computerSequence = [];
 let playerSequence = [];
@@ -12,6 +13,7 @@ let interval = 0;
 let turn = 0;
 let lightPad = 0;
 let level = 1;
+let win = false;
 
 
 // checking for clicks on 'play button'
@@ -26,7 +28,11 @@ playButton.click(function() {
 
 //function to set game in play
 function playGame() {
-    playerSequence = []; //array to store pad number of user clicks
+    playerSequence = []; 
+    computerSequence =[];//array to store pad number of user clicks
+    level=1;
+    lightPad =0;
+    win = false;
     //level = 4; //level will increase with each repetition of the set interval loop
 
     // generate computer array sequence - loop 20 times as that is the max for the game
@@ -56,7 +62,8 @@ function getRndInteger(min, max) {
 }
 
 function gameRound() {
-    console.log("in game round Light pad is " + lightPad);
+    console.log("in game round Light pad is " + lightPad + "level is " + level);
+    showTextInDisplay("Round " + level);
     if (lightPad == level) { //computer has completed a level once its lighted up same amoun of lights as level
         //stop interval
         clearInterval(interval);
@@ -65,7 +72,7 @@ function gameRound() {
 
 
     }
-    if (computerTurn) {
+    if (computerTurn && playing == true) {
         //light up a relevant light using timeout function
         //clear last pad colour bg css back to default
         console.log("in comp turn")
@@ -73,6 +80,7 @@ function gameRound() {
         defaultColour(computerSequence[lightPad - 1]); //clear last pad to its default background colour
         lightPad++;
     }
+
 }
 
 function lightColour() {
@@ -128,40 +136,58 @@ pad4.click(function() {
     }
 });
 
-function padUserClick(num, colour) {
-    pad(num, colour);
+function padUserClick(num, colour) {// colour pad to 'ligth' after click
+    pad(num, colour);//changing pad colour
     setTimeout(function() {
         defaultColour(num); //after 300ms set bg colour back to default
     }, 300);
     console.log(num)
     playerSequence.push(num); // passing user selections into array for later checking
-    console.log(playerSequence.toString());
-    checkSelection();
+    console.log(playerSequence.toString());//testing
+    checkSelection();//checking user guesses
 }
 
-function checkSelection() {
+function checkSelection() {// function to check user clicks and compare to computer array sequence
     var match = true;
     if (playerSequence[(playerSequence.length - 1)] !== computerSequence[(playerSequence.length - 1)]) {
-        match = false;
+        match = false;// if wrong click there is no match
+    }
+    if (playerSequence.length == 3 && match) {
+       //player has made all the right guesses. Guesses to win set to 3 for testing purposes
+        winGame();
     }
 
     if (!match) {
-        console.log("wrong click");
-        playing = false; // ending game and changing play button state
-        changeStatePlayButton();
-        computerSequence = []; //empty computer array for new game
-        lightPad = 0;
+       //restart game and print loser to display screen if wrong click
+        restartGame();
+         showTextInDisplay("Loser!");
     }
-    if (match && playerSequence.length == level) {
-        //repeat game function
-        console.log("right click");
+    if (match && playerSequence.length == level && !win) {
+        //repeat game function if guesses are right but user has not yet won
         level++; // move up a level for the next cycle
         playerSequence = []; //empty players sequence for next round of clicks
         computerTurn = true; //its computers turn next
-        lightPad = 0; //setting counter back to default
+        lightPad = 0; //setting counter back to default for next cycle
         interval = setInterval(gameRound, 1000); //running game round again with an extra pad lighting
 
     }
 
+}
 
+function showTextInDisplay(text) {
+
+    displayText.html(text);
+}
+
+function winGame() {
+    console.log("game won");//testing
+    win = true;
+    restartGame();//start game over and print winner to display
+    showTextInDisplay("Winner!");
+    
+}
+
+function restartGame(){
+    playing = false; // ending game and changing play button state
+    changeStatePlayButton();
 }
