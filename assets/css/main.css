@@ -20,6 +20,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #45a29e;
+    
 }
 
 /* board section*/
@@ -112,19 +113,6 @@ body {
 
 }
 
-/* centre text in centre black pad*/
-
-.centre-text {
-    position: relative;
-    top: 25%;
-    color: silver;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    clear: right;
-    font-family: 'Righteous', cursive;
-}
-
 /* styling  game start 'play' button*/
 
 .start-button {
@@ -181,7 +169,8 @@ body {
     width: 1rem;
     height: 1rem;
     background-color: red;
-    margin-top: 2%
+    margin-top: 2%;
+    border: solid black;
 }
 
 .difficulty-select2 {
@@ -190,6 +179,7 @@ body {
     width: 1rem;
     height: 1rem;
     background-color: grey;
+    border: solid black;
 
 }
 
@@ -221,6 +211,10 @@ body {
     margin: auto;
     text-align: center;
     font-family: 'Righteous', cursive;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    
 }
 
 /* modals styling*/
@@ -277,10 +271,6 @@ body {
         height: 30rem;
     }
 
-    /* chaning font size of centre element for larger screens*/
-    .centre-text {
-        font-size: 2em;
-    }
     /*changing font size of play button for larger screen*/
     .start-text {
         letter-spacing: .2rem;
