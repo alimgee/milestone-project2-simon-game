@@ -13,8 +13,8 @@ let interval = 0;
 let lightPad = 0;
 let level = 1;
 let win = false;
-let hard = 5;
-let normal = 3;
+let hard = 20;
+let normal = 10;
 let difficulty = normal;
 const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
@@ -47,7 +47,7 @@ function playGame() {
     //begin computer turn by using set interval to loop throught the level
     computerTurn = true;
     interval = setInterval(gameRound, 1000);
-    console.log(computerSequence.toString());
+    console.log(computerSequence.toString());//sending to console for testing
 }
 
 //function to alternate to look of the play button during active play
@@ -155,7 +155,6 @@ function padUserClick(num, colour) { // colour pad to 'ligth' after click
     }, 300);
 
     playerSequence.push(num); // passing user selections into array for later checking
-    console.log(playerSequence.toString()); //testing
     checkSelection(); //checking user guesses
 }
 
@@ -192,7 +191,6 @@ function showTextInDisplay(text) {
 }
 
 function winGame() {
-    console.log("game won"); //testing
     win = true;
     restartGame(); //start game over and print winner to display
     showTextInDisplay("Winner!");
@@ -238,7 +236,6 @@ $(".difficulty-select1").click(function() { //normal is selected
 });
 $(".difficulty-select2").click(function() { //hard is selected
     difficulty = hard;
-    console.log("difficult")
     $(".difficulty-select1").css("background-color", "grey");
     $(".difficulty-select2").css("background-color", "red");
 });
