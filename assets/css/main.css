@@ -28,8 +28,8 @@ body {
 /*back of board*/
 
 .back {
-    width: 19rem;
-    height: 19rem;
+    width: 18rem;
+    height: 18rem;
     border-radius: 50%;
     background-color: black;
     margin: auto;
@@ -259,12 +259,17 @@ body {
         width: 70%;
     }
 }
-
+@media only screen and (min-width: 360px) {
+    /* resizing back board for different screens*/
+    .back {
+        width: 20rem;
+        height: 20rem;
+    }
 @media only screen and (min-width: 768px) {
     /* resizing back board for different screens*/
     .back {
-        width: 30rem;
-        height: 30rem;
+        width: 32rem;
+        height: 32rem;
     }
 
     /*changing font size of play button for larger screen*/
