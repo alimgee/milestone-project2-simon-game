@@ -86,10 +86,16 @@ WIreFrames were created using balsamiq tool with license key provided by the Cod
 ## Features
  
 ### Existing Features
-
+1. Display section shows customer round level, and whether they have won or lost
+2. All lights will flash and display section will flash red upon game completion
+3. 'Play' button deactivates during play 
+4. Each pad will flash and make a sound when selected by the use
+5. Each pad will flash and make a sound when activated by the computer
+6. User can access game rules via navigation item
+7. User can access a brief history of the game via navigation item
 
 ### Features Left to Implement
-
+1. Once game ends both the user selections and the computer selections are shown in the display section
 
 ## Technologies Used
 
@@ -110,6 +116,28 @@ WIreFrames were created using balsamiq tool with license key provided by the Cod
 
 
 ## Testing 
+
+As i was new to Javascript I had to create and adjust functions as i progressed through the game development, hence i was unable to use a TDD framework such as Jasmine. I fully tested all functions using console logs throughout verifying functions behave exactly as i expected them. Upon code completion  i implemented the below user testing.
+
+ I have left in a console log of the computers array sequence which can be access via dev tools, for any further checking a tester might wish to do on my code outputs.
+
+| Test       | Expected           |Passed  |
+| :------------- |:-------------| :-----:|
+| User selects 'play' button  | Game commences, computer activates fist pad, pad lighted is same as console logged computer sequence in chrome dev tools |  &#9745; 
+| User selects 'play' button  | display shows current round number |  &#9745; 
+| User selects 'play' button  | 'Play' button is disabled |  &#9745; 
+| User replicates computer selection correctly whilst not yet reaching the 'win' state     | Computer moves to next 'round' and runs pattern sequence again with new pad selction added to the end of previous selection      |   &#9745;  |
+| User  continues to replicates computer selection correctly and reaches round 10 when normal difficulty is selected     | User has won. All lights flash and display flashes red. 'Play' button re-activated     |   &#9745;  |
+| User  continues to replicates computer selection correctly and reaches round 10 when 'hard' difficulty is selected    | Game continues to next round    |   &#9745;  |
+| User  continues to replicates computer selection correctly and reaches round 20 when hard difficulty)     | User has won. All lights flash and display flashes red. Display shows text "winner"    |   &#9745;  |
+|   User replicates computer selection correctly whilst not yet reaching the 'win' state       | Display shows next round number      |   &#9745;  |
+| User selects different pad to computer selection | Game ends, 'Play' button re-enabled for new game   | &#9745; |
+| User selects different pad to computer selection | Game ends, Display informs User they have lost   | &#9745; |
+| User selects different pad to computer selection | Game ends, All light pads flash and display flashes red   | &#9745; |
+| User selects 'Game Rules' in top navigation | Modal pops up showing game rules  | &#9745; |
+| User selects 'Game History' in top navigation | Modal pops up showing game history  | &#9745; |
+| User views game on Mobile  device| Game and page resizes and displays correctly as per device  | &#9745; |
+| User views game on Desktop  device| Game and page resizes and displays correctly as per device  | &#9745; |
 
 ## Coding Notes
 The game awaits for a user click on the 'play' button before anything occurs in the game.
@@ -238,27 +266,14 @@ GameRound function will continue to loop as long as the user guesses correctly a
 
 
 
-## Credits
-
-### Content
-
-
-
-### Media
-
-#### Images
-
-
-#### Audio
-
-
-### Code
-
 
 ### Acknowledgements
 
+<strong>Code Institute</strong> mentors and tutors for their assistance in getting me this far in the course.
+All the folk in the <strong>Code Institute Slack </strong> for their invaluable input to their fellow members development.
 
 
 #### Disclaimer
 The content of this website is educational purposes only.
+
 
