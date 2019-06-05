@@ -35,11 +35,7 @@ This is project is part of the 'Interactive Front-end Milestone 2' module of the
 6. [**Deployment**](#deployment)
 
 
-7. [**Credits**](#credits)
-    - [**Content**](#content)
-    - [**Media**](#media)
-    - [**Code**](#code)
-    - [**Acknowledgements**](#acknowledgements)
+7. [**Acknowledgements**](#acknowledgements)
 
 8. [**Disclaimer**](#disclaimer)
 
@@ -82,7 +78,8 @@ The following sound files were used to replicate the original game sounds:
 This were found on the freecodecamp website https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/build-a-simon-game/
 
 ### Wireframes
-WIreFrames were created using balsamiq tool with license key provided by the Code Institute. https://balsamiq.com/
+WIreFrames were created using balsamiq tool with license key provided by the Code Institute. https://balsamiq.com/ and came be found in the /wireframes folder. https://github.com/alimgee/milestone-project2-simon-game/tree/master/wireframes
+
 ## Features
  
 ### Existing Features
@@ -95,7 +92,8 @@ WIreFrames were created using balsamiq tool with license key provided by the Cod
 7. User can access a brief history of the game via navigation item
 
 ### Features Left to Implement
-1. Once game ends both the user selections and the computer selections are shown in the display section
+1. ~~ Once game ends both the user selections and the computer selections are shown in the display section ~~
+This new feature was added at end of the project due to having enough time to implement it.
 
 ## Technologies Used
 
@@ -138,6 +136,18 @@ As i was new to Javascript I had to create and adjust functions as i progressed 
 | User selects 'Game History' in top navigation | Modal pops up showing game history  | &#9745; |
 | User views game on Mobile  device| Game and page resizes and displays correctly as per device  | &#9745; |
 | User views game on Desktop  device| Game and page resizes and displays correctly as per device  | &#9745; |
+
+### Additional New feature testing
+As i had some time i decided to go ahead and implement addtional new functionality which show the user the computer and the user selections at the end of the game in the display section.
+
+| Test       | Expected           |Passed  |
+| :------------- |:-------------| :-----:|
+| User selects 'play' button  | Game commences with no change than normal on display section |  &#9745; |
+| User selects 'play' button after completing a game  | display clears last user and computer selections and 'Round 1' is displayed |  &#9745; |
+| User looses game  | display shows current user and computer selections and 'Loser Press 'Play' to start again.' text is displayed |  &#9745; |
+| User wins game  | display shows current user and computer selections and 'Winner Press 'Play' to start again.' text is displayed |  &#9745; |
+
+
 
 ## Coding Notes
 The game awaits for a user click on the 'play' button before anything occurs in the game.
@@ -264,7 +274,10 @@ If the user has not yet won as there are still some rounds left then the level v
 GameRound function will continue to loop as long as the user guesses correctly and the wining level has not been reached.
 ## Deployment
 
+This site was built using C9 virtual env. Git was used for source control and all content was push to github
+The repos on github can be found at https://github.com/alimgee/milestone-project2-simon-game and the site can be seen at [https://alimgee.github.io/milestone-project2-simon-game/](https://alimgee.github.io/milestone-project2-simon-game/)
 
+To deploy you can select the 'clone' option on the repo and clone into your local env by following the instructions at https://help.github.com/en/articles/cloning-a-repository
 
 
 ### Acknowledgements
@@ -275,5 +288,6 @@ All the folk in the <strong>Code Institute Slack </strong> for their invaluable 
 
 #### Disclaimer
 The content of this website is educational purposes only.
+
 
 

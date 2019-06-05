@@ -342,8 +342,8 @@ body {
 @media only screen and (min-width: 360px) {
     /* resizing back board for different screens*/
     .back {
-        width: 20rem;
-        height: 20rem;
+        width: 21rem;
+        height: 21rem;
     }
 }
 
