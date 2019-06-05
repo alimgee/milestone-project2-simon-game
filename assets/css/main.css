@@ -20,7 +20,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #45a29e;
-    
+
 }
 
 /* board section*/
@@ -160,7 +160,6 @@ body {
     font-family: 'Righteous', cursive;
     width: 100%;
     text-align: center
-
 }
 
 .difficulty-select1 {
@@ -227,7 +226,6 @@ body {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799', GradientType=0);
     /* IE6-9 */
-    
     color: #fafafa;
     font-size: 1rem;
 
@@ -251,6 +249,61 @@ body {
     font-size: 3rem;
 }
 
+/*New feature to display selections to user at the end of the game*/
+
+/* setting css for display mini pads*/
+.red {
+    height: .5rem;
+    width: .5rem;
+    background-color: red;
+    display: inline-block;
+    margin-right: .1rem;
+    border-radius: 100% 0 0 0;
+    border: solid .05rem black;
+}
+
+.green {
+    height: .5rem;
+    width: .5rem;
+    background-color: green;
+    display: inline-block;
+    margin-right: .1rem;
+    border-radius: 0 100% 0 0;
+    border: solid .05rem black;
+}
+
+.yellow {
+    height: .5rem;
+    width: .5rem;
+    background-color: goldenrod;
+    display: inline-block;
+    margin-right: .1rem;
+    border-radius: 0 0 100% 0;
+    border: solid .05rem black;
+}
+
+.blue {
+    height: .5rem;
+    width: .5rem;
+    background-color: blue;
+    display: inline-block;
+    margin-right: .1rem;
+    border-radius: 0 0 0 100%;
+    border: solid .05rem black;
+}
+
+/*display and position of show selections section*/
+.selections {
+    font-size: .8rem;
+    width: 80%;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bolder;
+    display: none;
+
+}
+
 /* media queries*/
 
 @media only screen and (min-width: 568px) {
@@ -259,33 +312,34 @@ body {
         width: 70%;
     }
 }
+
 @media only screen and (min-width: 360px) {
     /* resizing back board for different screens*/
     .back {
         width: 20rem;
         height: 20rem;
     }
-@media only screen and (min-width: 768px) {
-    /* resizing back board for different screens*/
-    .back {
-        width: 32rem;
-        height: 32rem;
-    }
+    @media only screen and (min-width: 768px) {
+        /* resizing back board for different screens*/
+        .back {
+            width: 32rem;
+            height: 32rem;
+        }
 
-    /*changing font size of play button for larger screen*/
-    .start-text {
-        letter-spacing: .2rem;
-        font-size: 1.5rem;
-    }
+        /*changing font size of play button for larger screen*/
+        .start-text {
+            letter-spacing: .2rem;
+            font-size: 1.5rem;
+        }
 
-    /*changing display section length for larger screen*/
-    .display-section {
-        width: 45%;
-    }
+        /*changing display section length for larger screen*/
+        .display-section {
+            width: 45%;
+        }
 
-    /* increasing font size for larger screens*/
-    .difficulty {
-        font-size: 1rem;
-    }
+        /* increasing font size for larger screens*/
+        .difficulty {
+            font-size: 1rem;
+        }
 
-}
+    }
