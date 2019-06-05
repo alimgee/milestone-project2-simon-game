@@ -252,6 +252,7 @@ body {
 /*New feature to display selections to user at the end of the game*/
 
 /* setting css for display mini pads*/
+
 .red {
     height: .5rem;
     width: .5rem;
@@ -293,6 +294,7 @@ body {
 }
 
 /*display and position of show selections section*/
+
 .selections {
     font-size: .8rem;
     width: 80%;
@@ -310,6 +312,30 @@ body {
     /*changing display section length for larger screen*/
     .display-section {
         width: 70%;
+    }
+    .red {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .2rem;
+        border: solid .2rem black;
+    }
+    .green {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .2rem;
+        border: solid .2rem black;
+    }
+    .yellow {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .2rem;
+        border: solid .2rem black;
+    }
+    .blue {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .2rem;
+        border: solid .2rem black;
     }
 }
 
