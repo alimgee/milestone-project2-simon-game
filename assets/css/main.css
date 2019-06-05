@@ -345,27 +345,36 @@ body {
         width: 20rem;
         height: 20rem;
     }
-    @media only screen and (min-width: 768px) {
-        /* resizing back board for different screens*/
-        .back {
-            width: 32rem;
-            height: 32rem;
-        }
+}
 
-        /*changing font size of play button for larger screen*/
-        .start-text {
-            letter-spacing: .2rem;
-            font-size: 1.5rem;
-        }
-
-        /*changing display section length for larger screen*/
-        .display-section {
-            width: 45%;
-        }
-
-        /* increasing font size for larger screens*/
-        .difficulty {
-            font-size: 1rem;
-        }
-
+@media only screen and (min-width: 768px) {
+    /* resizing back board for different screens*/
+    .back {
+        width: 32rem;
+        height: 32rem;
     }
+
+    /*changing font size of play button for larger screen*/
+    .start-text {
+        letter-spacing: .2rem;
+        font-size: 1.5rem;
+    }
+
+    /*changing display section length for larger screen*/
+    .display-section {
+        width: 55%;
+    }
+
+    /* increasing font size for larger screens*/
+    .difficulty {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (min-width: 1024px){
+    
+    .display-section {
+    width: 40%;
+    }
+}

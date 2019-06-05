@@ -28,7 +28,7 @@ playButton.click(function() {
         playing = true;
         changeStatePlayButton();
         playGame();
-        addSelectConent();
+
     }
 });
 
@@ -39,6 +39,12 @@ function playGame() {
     level = 1;
     lightPad = 0;
     win = false;
+    
+    $(".comp").css("display" , "none");
+    $(".user").css("display" , "none");
+    $(".compSelect").css("display" , "none");
+    $(".userSelect").css("display" , "none");
+ 
 
     // generate computer array sequence - loop 20 times as that is the max for the game
     for (var i = 0; i < 20; i++) {
@@ -173,7 +179,8 @@ function checkSelection() { // function to check user clicks and compare to comp
         //restart game and print loser to display screen if wrong click
         flashLights();
         restartGame();
-        showTextInDisplay("Loser!");
+        showTextInDisplay(`Loser!<br><span class="small"> Press <kbd>'Play'</kbd> to start again.</span>`);
+        addSelectConent();
     }
     if (match && playerSequence.length == level && !win) {
         //repeat game function if guesses are right but user has not yet won
@@ -194,8 +201,9 @@ function showTextInDisplay(text) {
 function winGame() {
     win = true;
     restartGame(); //start game over and print winner to display
-    showTextInDisplay("Winner!");
+    showTextInDisplay(`Winner! <br><span class="small"> Press <kbd>'Play'</kbd> to start again.</span>`);
     flashLights();
+    addSelectConent();
 
 }
 
@@ -245,10 +253,41 @@ $(".difficulty-select2").click(function() { //hard is selected
 //sections when game ends
 
 function addSelectConent(){
-    $(".selections").css("display" , "block");
+    $(".selections").css("display" , "block");//display oll html containers for selection section
     $(".comp").css("display" , "block");
     $(".user").css("display" , "block");
     console.log("in add");
     console.log(level);
+    // call function that loops through selection arrays and displays httml to the dom based on array content
+    loopSelectionArray(computerSequence, ".compSelect");
+    loopSelectionArray(playerSequence, ".userSelect");
    
+}
+
+function loopSelectionArray(array, ident){
+    var selectStr="";
+    var padNum =0;
+    for (var i=0; i<level; i++){
+        padNum = array[i];
+        // loop and set html base on pad number in array. Add all html to variable selectStr
+        if (padNum==1){
+            selectStr +=   `<div class="red"></div>`;
+            console.log("in 1");
+        }
+        if (padNum==2){
+            selectStr += `<div class="green"></div>`;
+            console.log("in 2");
+        }
+        if (padNum==3){
+            selectStr +=  `<div class="blue"></div>`;
+            console.log("in 3");
+        }
+        if (padNum==4){
+            selectStr += ` <div class="yellow"></div>`;
+            console.log("in 4");
+        }
+        
+    }
+    $(ident).css("display" , "block");// display relevant selectin div
+    $(ident).html(selectStr);// send string of html to the DOM of relevant element
 }
