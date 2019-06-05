@@ -28,6 +28,7 @@ playButton.click(function() {
         playing = true;
         changeStatePlayButton();
         playGame();
+        addSelectConent();
     }
 });
 
@@ -239,3 +240,15 @@ $(".difficulty-select2").click(function() { //hard is selected
     $(".difficulty-select1").css("background-color", "grey");
     $(".difficulty-select2").css("background-color", "red");
 });
+
+//adding new feature - function to allow users to see both theirs and the computers
+//sections when game ends
+
+function addSelectConent(){
+    $(".selections").css("display" , "block");
+    $(".comp").css("display" , "block");
+    $(".user").css("display" , "block");
+    console.log("in add");
+    console.log(level);
+   
+}
